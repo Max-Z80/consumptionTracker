@@ -1,3 +1,4 @@
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { Line } from "react-chartjs-2";
 import moment from "moment";
