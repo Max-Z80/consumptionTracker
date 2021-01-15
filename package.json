@@ -46,16 +46,18 @@
   "devDependencies": {
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.1.0",
-    "bluebird": "^3.7.2",
-    "expect": "^26.6.2",
+    "chai": "^4.2.0",
+    "chai-karma-snapshot": "^0.8.0",
     "expect.js": "^0.3.1",
     "karma": "^5.2.3",
     "karma-firefox-launcher": "^2.1.0",
     "karma-mocha": "^2.0.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-mocha-snapshot": "^0.2.1",
+    "karma-snapshot": "^0.6.0",
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^4.0.0-rc.0",
     "mocha": "^8.2.1",
-    "promise": "^8.1.0",
     "sinon": "^9.2.2",
     "webpack": "^4.44.2"
   }

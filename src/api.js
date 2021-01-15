@@ -2,9 +2,7 @@ import axios from "axios";
 
 const api = {
   get: function() {
-    return axios.get("http://localhost:1234/get").catch(err => {
-      console.err("An error occured while getting data");
-    });
+    return axios.get("http://localhost:1234/get");
   },
   add: function(urlEncodedData) {
     return axios({

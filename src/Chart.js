@@ -39,7 +39,10 @@ function Chart(props) {
     scales: {
       xAxes: [
         {
-          type: "time"
+          type: "time",
+          time: {
+            unit: "day"
+          }
         }
       ],
       yAxes: [
@@ -58,9 +61,6 @@ function Chart(props) {
   };
 
   function onClickHandler(elements) {
-    console.log("chart was clicked");
-    console.log("elements vaut");
-    console.log(elements);
     if (elements && elements[0]) {
       const { _datasetIndex, _index } = elements[0];
       const { x, y } = elements[0]._chart.data.datasets[_datasetIndex].data[
