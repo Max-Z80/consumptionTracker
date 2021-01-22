@@ -11,7 +11,7 @@ module.exports = function(config) {
       "**/__snapshots__/**/*.md": ["snapshot"],
       "tests.webpack.js": ["webpack"] //preprocess with webpack and our sourcemap loader
     },
-    reporters: ["mocha"], //report results in this format
+    //reporters: ["mocha"], //report results in this format
     webpack: {
       mode: "development",
       //kind of a copy of your webpack config
@@ -35,15 +35,15 @@ module.exports = function(config) {
       update: !!process.env.UPDATE,
       prune: !!process.env.PRUNE
     },
-    mochaReporter: {
-      showDiff: true
-    },
-
+    // mochaReporter: {
+    //   showDiff: true
+    // },
     client: {
-      mocha: {
-        reporter: "html",
-        ui: "bdd"
-      }
+      //   mocha: {
+      //     reporter: "html",
+      //     ui: "bdd"
+      //   },
+      clearContext: false
     }
   });
 };

@@ -64,6 +64,20 @@ describe("App.js", () => {
     expect(title.getAttribute("style")).match(/text-align: center/);
   });
 
+  it.only("renders 2 curves: water consumption and notes", async () => {
+    mockedGet = sinon.stub(api, "get");
+    mockedGet.resolves({
+      data: [
+        { date: "2020-12-18", m3: 100 },
+        { date: "2020-12-20", note: "Set max time under the shower to 10 min" },
+        { date: "2020-12-20", m3: 110 }
+      ]
+    });
+    const { container } = await render(<App />);
+    debugger;
+    const canvas = container.querySelector("canvas");
+  });
+
   it("user adds a new value", async () => {
     const mockedData = { data: [] };
     mockedGet = sinon.stub(api, "get");
