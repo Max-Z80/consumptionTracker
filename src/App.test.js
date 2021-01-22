@@ -29,8 +29,8 @@ describe("App.js", () => {
     const response = {
       data: [
         { date: "2020-12-18", m3: 100 },
-        { date: "2020-12-20", m3: 110 }
-      ]
+        { date: "2020-12-20", m3: 110 },
+      ],
     };
     mockedGet = sinon.stub(api, "get");
     mockedGet.resolves(response);
@@ -44,8 +44,8 @@ describe("App.js", () => {
     const mockedData = {
       data: [
         { date: "2020-12-18", m3: 100 },
-        { date: "2020-12-20", m3: 110 }
-      ]
+        { date: "2020-12-20", m3: 110 },
+      ],
     };
     mockedGet = sinon.stub(api, "get");
     mockedGet.resolves(mockedData);
@@ -64,17 +64,23 @@ describe("App.js", () => {
     expect(title.getAttribute("style")).match(/text-align: center/);
   });
 
-  it.only("renders 2 curves: water consumption and notes", async () => {
+  it("renders 2 curves: water consumption and notes", async function () {
     mockedGet = sinon.stub(api, "get");
     mockedGet.resolves({
       data: [
         { date: "2020-12-18", m3: 100 },
-        { date: "2020-12-20", note: "Set max time under the shower to 10 min" },
-        { date: "2020-12-20", m3: 110 }
-      ]
+        { date: "2020-12-20", note: "Set max shower time to 10 min" },
+        { date: "2020-12-20", m3: 110 },
+      ],
     });
     const { container } = await render(<App />);
-    debugger;
+
+    this.timeout(60000);
+    await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve();
+      }, 15000);
+    });
     const canvas = container.querySelector("canvas");
   });
 
@@ -92,10 +98,10 @@ describe("App.js", () => {
     expect(panel).to.exist;
 
     fireEvent.change(getByLabelText("Date"), {
-      target: { value: "2000-01-01" }
+      target: { value: "2000-01-01" },
     });
     fireEvent.change(getByLabelText(/^m/), {
-      target: { value: "999" }
+      target: { value: "999" },
     });
 
     const mockedAdd = sinon.stub(api, "add");
@@ -122,8 +128,8 @@ describe("App.js", () => {
     const mockedData = {
       data: [
         { date: "2020-12-18", m3: 100 },
-        { date: "2020-12-20", m3: 110 }
-      ]
+        { date: "2020-12-20", m3: 110 },
+      ],
     };
 
     mockedGet = sinon.stub(api, "get");
@@ -150,7 +156,7 @@ function clickElement(chart, datasetIndex, index) {
     clientY: rect.top + point.y,
     cancelable: true,
     bubbles: true,
-    view: window
+    view: window,
   });
 
   node.dispatchEvent(event);
