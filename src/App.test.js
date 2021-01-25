@@ -68,20 +68,16 @@ describe("App.js", () => {
     mockedGet = sinon.stub(api, "get");
     mockedGet.resolves({
       data: [
-        { date: "2020-12-18", m3: 100 },
+        { date: "2020-12-18", m3: 2 },
         { date: "2020-12-20", note: "Set max shower time to 10 min" },
-        { date: "2020-12-20", m3: 110 },
+        { date: "2020-12-20", m3: 3 },
+        { date: "2020-12-21", note: "dry toilets installed" },
       ],
     });
     const { container } = await render(<App />);
 
-    this.timeout(60000);
-    await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve();
-      }, 15000);
-    });
     const canvas = container.querySelector("canvas");
+    expect(canvas.toDataURL()).to.matchSnapshot();
   });
 
   it("user adds a new value", async () => {
