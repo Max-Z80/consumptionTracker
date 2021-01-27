@@ -70,8 +70,9 @@ describe("App.js", () => {
       data: [
         { date: "2020-12-18", m3: 2 },
         { date: "2020-12-20", note: "Set max shower time to 10 min" },
-        { date: "2020-12-20", m3: 3 },
         { date: "2020-12-21", note: "dry toilets installed" },
+        { date: "2020-12-22", m3: 3, note: "note and m3" },
+        { date: "2020-12-23", m3: 4 },
       ],
     });
     const { container } = await render(<App />);
