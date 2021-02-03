@@ -4,6 +4,11 @@
 #### UC1.2
   Max is looking at his water invoice. He is surprised by the last water meter [reading](../glossary.md#entity-value) that was used to calculate the water consumption in his invoice. He thinks that maybe the water company made a mistake. So he browses to the app and check the curve corresponding to the water meter readings which he writes on a monthly basis. He finds out that there is a discrepancy between his water meter readings and the water company readings, he will call the water company.
 
+#### UC1.3
+  Max wants to know the exact consumption of water. He moves the mouse hover the consumption data, and for each data point he can read instantly:
+  - the exact consumption since the last measure with human meaningfull units
+  - a estimation of the daily consumption between the previous data point and the current data point with human meaningfull units
+  
 ----
 
 #### UC2.1
