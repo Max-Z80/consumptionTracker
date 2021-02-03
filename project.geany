@@ -18,8 +18,8 @@ detect_indent_width=false
 indent_mode=2
 
 [project]
-name=waterConsumption
-base_path=/home/max/devPerso/waterconsumptionv4
+name=consumptionTracker
+base_path=/home/max/devPerso/consumptionTracker
 
 [long line marker]
 long_line_behaviour=1
@@ -29,4 +29,3 @@ long_line_column=72
 current_page=-1
 
 [VTE]
-last_dir=/home/max/Master_CCI/PL1/TP/TP2

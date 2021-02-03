@@ -1,18 +1,18 @@
-Water consumption is a web app which enables you to monitor your water consumption by time.
+`consumptionTracker` is a web app which enables you to monitor your consumption by time.
 
 # Features
-- add / edit water readings from your water counter
+- add / edit readings
 
 
 # Backend
-THe backend is part of the project and is stored in the folder `backend`
+The backend is part of the project and is stored in the folder `backend`
 
 # Data structure
 Data is stored under the form of a CSV file. No DB dependency needed.
 
-The file `vonsumption.csv contains:
+The file `consumption.csv contains:
 first line: the csv header 
-next lines: entry. THere must be a date and either a m3 or note or both
+next lines: entry. There must be a date, then either a reading or a note or both
 
 ```
 date;m3;note
