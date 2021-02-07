@@ -7,8 +7,25 @@
             <projectinformation-place>consumptionTracker</projectinformation-place>
         </projectinformation>
     </project>
-    <task classkmad="tache.Task" id-task-point="K12" id-task-subtasks-list="K4 K66 " idkmad="K13">
-        <task-name>Track my consumption</task-name>
+    <abstractobject classkmad="metaobjet.ObjetAbstrait" idkmad="K44">
+        <abstractobject-name>reading</abstractobject-name>
+    </abstractobject>
+    <abstractobject classkmad="metaobjet.ObjetAbstrait" idkmad="K45">
+        <abstractobject-name>consumption</abstractobject-name>
+    </abstractobject>
+    <abstractobject classkmad="metaobjet.ObjetAbstrait" idkmad="K125">
+        <abstractobject-name>graph</abstractobject-name>
+        <group classkmad="metaobjet.Groupe" id-group-abstractobject="K125" id-group-agregat="K127" idkmad="K126">
+            <agregat classkmad="metaobjet.ListeAg" idkmad="K127"/>
+            <group-name>graphGroup</group-name>
+        </group>
+        <abstractattribut classkmad="metaobjet.AttributAbstrait" id-abstractattribut-abstractobject="K125" idkmad="K128">
+            <abstractattribut-name>needsRescaling</abstractattribut-name>
+            <abstractattribut-typestructure>BoolValue</abstractattribut-typestructure>
+        </abstractattribut>
+    </abstractobject>
+    <task classkmad="tache.Task" id-task-point="K142" id-task-subtasks-list="K4 K140 " idkmad="K143">
+        <task-name>Track consumption</task-name>
         <task-numero>Racine   </task-numero>
         <task-observation/>
         <task-executant>ABS</task-executant>
@@ -19,12 +36,12 @@
         <task-precondition>true</task-precondition>
         <task-effetsdebord>void</task-effetsdebord>
         <task-iteration>[1]</task-iteration>
-        <point classkmad="tache.Point" idkmad="K12">
-            <point-x>763</point-x>
+        <point classkmad="tache.Point" idkmad="K142">
+            <point-x>762</point-x>
             <point-y>0</point-y>
         </point>
         <task classkmad="tache.Task" id-task-point="K3" id-task-subtasks-list="K47 K50 K87 " idkmad="K4">
-            <task-name>Visualize my data</task-name>
+            <task-name>Visualize curves</task-name>
             <task-numero>1</task-numero>
             <task-observation>Consult </task-observation>
             <task-executant>ABS</task-executant>
@@ -33,10 +50,10 @@
             <task-interruptible>false</task-interruptible>
             <task-decomposition>PAR</task-decomposition>
             <task-precondition>true</task-precondition>
-            <task-effetsdebord>?BOOL reading</task-effetsdebord>
+            <task-effetsdebord>void</task-effetsdebord>
             <task-iteration>[1]</task-iteration>
             <point classkmad="tache.Point" idkmad="K3">
-                <point-x>389</point-x>
+                <point-x>392</point-x>
                 <point-y>144</point-y>
             </point>
             <task classkmad="tache.Task" id-task-point="K46" id-task-subtasks-list="K34 K28 " idkmad="K47">
@@ -81,7 +98,8 @@
                     <task-optional>false</task-optional>
                     <task-interruptible>false</task-interruptible>
                     <task-decomposition>LEAF</task-decomposition>
-                    <task-precondition>true</task-precondition>
+                    <task-precondition>?BOOL</task-precondition>
+                    <task-descriptionprecondition>est ce que les points d'interet du graphe sont bien visible ?</task-descriptionprecondition>
                     <task-effetsdebord>void</task-effetsdebord>
                     <task-iteration>[1]</task-iteration>
                     <point classkmad="tache.Point" idkmad="K27">
@@ -90,7 +108,7 @@
                     </point>
                 </task>
             </task>
-            <task classkmad="tache.Task" id-task-point="K49" id-task-subtasks-list="K64 K54 " idkmad="K50">
+            <task classkmad="tache.Task" id-task-point="K49" id-task-subtasks-list="K64 K130 " idkmad="K50">
                 <task-name>Visualize consumption</task-name>
                 <task-numero>1.2</task-numero>
                 <task-observation/>
@@ -123,7 +141,7 @@
                         <point-y>432</point-y>
                     </point>
                 </task>
-                <task classkmad="tache.Task" id-task-point="K53" idkmad="K54">
+                <task classkmad="tache.Task" id-task-point="K129" idkmad="K130">
                     <task-name>Zoom on the graph</task-name>
                     <task-numero>1.2.2</task-numero>
                     <task-observation/>
@@ -132,16 +150,17 @@
                     <task-optional>false</task-optional>
                     <task-interruptible>false</task-interruptible>
                     <task-decomposition>LEAF</task-decomposition>
-                    <task-precondition>true</task-precondition>
+                    <task-precondition>?BOOL</task-precondition>
+                    <task-descriptionprecondition>est ce que les points d'interet du graphe sont bien visible ?</task-descriptionprecondition>
                     <task-effetsdebord>void</task-effetsdebord>
                     <task-iteration>[1]</task-iteration>
-                    <point classkmad="tache.Point" idkmad="K53">
+                    <point classkmad="tache.Point" idkmad="K129">
                         <point-x>463</point-x>
                         <point-y>432</point-y>
                     </point>
                 </task>
             </task>
-            <task classkmad="tache.Task" id-task-point="K86" id-task-subtasks-list="K83 K85 " idkmad="K87">
+            <task classkmad="tache.Task" id-task-point="K86" id-task-subtasks-list="K83 K132 " idkmad="K87">
                 <task-name>Visualize notes</task-name>
                 <task-numero>1.3</task-numero>
                 <task-observation/>
@@ -170,12 +189,12 @@
                     <task-effetsdebord>void</task-effetsdebord>
                     <task-iteration>[1]</task-iteration>
                     <point classkmad="tache.Point" idkmad="K82">
-                        <point-x>629</point-x>
+                        <point-x>626</point-x>
                         <point-y>432</point-y>
                     </point>
                 </task>
-                <task classkmad="tache.Task" id-task-point="K84" idkmad="K85">
-                    <task-name>Observe a graph</task-name>
+                <task classkmad="tache.Task" id-task-point="K131" idkmad="K132">
+                    <task-name>Zoom on the graph</task-name>
                     <task-numero>1.3.2</task-numero>
                     <task-observation/>
                     <task-executant>INT</task-executant>
@@ -183,18 +202,19 @@
                     <task-optional>false</task-optional>
                     <task-interruptible>false</task-interruptible>
                     <task-decomposition>LEAF</task-decomposition>
-                    <task-precondition>true</task-precondition>
+                    <task-precondition>?BOOL</task-precondition>
+                    <task-descriptionprecondition>est ce que les points d'interet du graphe sont bien visible ?</task-descriptionprecondition>
                     <task-effetsdebord>void</task-effetsdebord>
                     <task-iteration>[1]</task-iteration>
-                    <point classkmad="tache.Point" idkmad="K84">
-                        <point-x>779</point-x>
+                    <point classkmad="tache.Point" idkmad="K131">
+                        <point-x>776</point-x>
                         <point-y>432</point-y>
                     </point>
                 </task>
             </task>
         </task>
-        <task classkmad="tache.Task" id-task-point="K65" id-task-subtasks-list="K91 K22 " idkmad="K66">
-            <task-name>Provide data</task-name>
+        <task classkmad="tache.Task" id-task-point="K139" id-task-subtasks-list="K91 K22 " idkmad="K140">
+            <task-name>Change the graph</task-name>
             <task-numero>2</task-numero>
             <task-observation/>
             <task-executant>ABS</task-executant>
@@ -202,11 +222,12 @@
             <task-optional>false</task-optional>
             <task-interruptible>false</task-interruptible>
             <task-decomposition>ALT</task-decomposition>
-            <task-precondition>true</task-precondition>
+            <task-precondition>?BOOL</task-precondition>
+            <task-descriptionprecondition>Do you need to update the graph ?</task-descriptionprecondition>
             <task-effetsdebord>void</task-effetsdebord>
             <task-iteration>[1]</task-iteration>
-            <point classkmad="tache.Point" idkmad="K65">
-                <point-x>1180</point-x>
+            <point classkmad="tache.Point" idkmad="K139">
+                <point-x>1144</point-x>
                 <point-y>144</point-y>
             </point>
             <task classkmad="tache.Task" id-task-point="K90" id-task-subtasks-list="K16 K89 " idkmad="K91">
@@ -222,7 +243,7 @@
                 <task-effetsdebord>void</task-effetsdebord>
                 <task-iteration>[1]</task-iteration>
                 <point classkmad="tache.Point" idkmad="K90">
-                    <point-x>1022</point-x>
+                    <point-x>1032</point-x>
                     <point-y>288</point-y>
                 </point>
                 <task classkmad="tache.Task" id-task-point="K15" id-task-subtasks-list="K58 K61 " idkmad="K16">
@@ -238,7 +259,7 @@
                     <task-effetsdebord>void</task-effetsdebord>
                     <task-iteration>[1]</task-iteration>
                     <point classkmad="tache.Point" idkmad="K15">
-                        <point-x>929</point-x>
+                        <point-x>939</point-x>
                         <point-y>432</point-y>
                     </point>
                     <task classkmad="tache.Task" id-task-point="K57" idkmad="K58">
@@ -254,7 +275,7 @@
                         <task-effetsdebord>void</task-effetsdebord>
                         <task-iteration>[1]</task-iteration>
                         <point classkmad="tache.Point" idkmad="K57">
-                            <point-x>827</point-x>
+                            <point-x>837</point-x>
                             <point-y>576</point-y>
                         </point>
                     </task>
@@ -271,7 +292,7 @@
                         <task-effetsdebord>void</task-effetsdebord>
                         <task-iteration>[1]</task-iteration>
                         <point classkmad="tache.Point" idkmad="K60">
-                            <point-x>1003</point-x>
+                            <point-x>1013</point-x>
                             <point-y>576</point-y>
                         </point>
                     </task>
@@ -280,7 +301,7 @@
                     <task-name>Write a note</task-name>
                     <task-numero>2.1.2</task-numero>
                     <task-observation/>
-                    <task-executant>INT</task-executant>
+                    <task-executant>ABS</task-executant>
                     <task-modality>COGN</task-modality>
                     <task-optional>false</task-optional>
                     <task-interruptible>false</task-interruptible>
@@ -289,7 +310,7 @@
                     <task-effetsdebord>void</task-effetsdebord>
                     <task-iteration>[1]</task-iteration>
                     <point classkmad="tache.Point" idkmad="K88">
-                        <point-x>1065</point-x>
+                        <point-x>1075</point-x>
                         <point-y>432</point-y>
                     </point>
                 </task>
@@ -307,7 +328,7 @@
                 <task-effetsdebord>void</task-effetsdebord>
                 <task-iteration>[1]</task-iteration>
                 <point classkmad="tache.Point" idkmad="K21">
-                    <point-x>1387</point-x>
+                    <point-x>1334</point-x>
                     <point-y>288</point-y>
                 </point>
                 <task classkmad="tache.Task" id-task-point="K94" idkmad="K95">
@@ -323,85 +344,28 @@
                     <task-effetsdebord>void</task-effetsdebord>
                     <task-iteration>[1]</task-iteration>
                     <point classkmad="tache.Point" idkmad="K94">
-                        <point-x>1266</point-x>
+                        <point-x>1199</point-x>
                         <point-y>432</point-y>
                     </point>
                 </task>
-                <task classkmad="tache.Task" id-task-point="K98" id-task-subtasks-list="K101 K56 K97 " idkmad="K99">
-                    <task-name>Write</task-name>
+                <task classkmad="tache.Task" id-task-point="K98" idkmad="K99">
+                    <task-name>Change values</task-name>
                     <task-numero>2.2.2</task-numero>
                     <task-observation/>
                     <task-executant>INT</task-executant>
                     <task-modality>COGN</task-modality>
                     <task-optional>false</task-optional>
                     <task-interruptible>false</task-interruptible>
-                    <task-decomposition>PAR</task-decomposition>
+                    <task-decomposition>LEAF</task-decomposition>
                     <task-precondition>true</task-precondition>
                     <task-effetsdebord>void</task-effetsdebord>
                     <task-iteration>[1]</task-iteration>
                     <point classkmad="tache.Point" idkmad="K98">
-                        <point-x>1452</point-x>
+                        <point-x>1385</point-x>
                         <point-y>432</point-y>
                     </point>
-                    <task classkmad="tache.Task" id-task-point="K100" idkmad="K101">
-                        <task-name>Write the date</task-name>
-                        <task-numero>2.2.2.1</task-numero>
-                        <task-observation/>
-                        <task-executant>INT</task-executant>
-                        <task-modality>COGN</task-modality>
-                        <task-optional>false</task-optional>
-                        <task-interruptible>false</task-interruptible>
-                        <task-decomposition>LEAF</task-decomposition>
-                        <task-precondition>true</task-precondition>
-                        <task-effetsdebord>void</task-effetsdebord>
-                        <task-iteration>[1]</task-iteration>
-                        <point classkmad="tache.Point" idkmad="K100">
-                            <point-x>1286</point-x>
-                            <point-y>576</point-y>
-                        </point>
-                    </task>
-                    <task classkmad="tache.Task" id-task-point="K55" idkmad="K56">
-                        <task-name>Write the reading</task-name>
-                        <task-numero>2.2.2.2</task-numero>
-                        <task-observation/>
-                        <task-executant>INT</task-executant>
-                        <task-modality>COGN</task-modality>
-                        <task-optional>false</task-optional>
-                        <task-interruptible>false</task-interruptible>
-                        <task-decomposition>LEAF</task-decomposition>
-                        <task-precondition>true</task-precondition>
-                        <task-effetsdebord>void</task-effetsdebord>
-                        <task-iteration>[1]</task-iteration>
-                        <point classkmad="tache.Point" idkmad="K55">
-                            <point-x>1420</point-x>
-                            <point-y>576</point-y>
-                        </point>
-                    </task>
-                    <task classkmad="tache.Task" id-task-point="K96" idkmad="K97">
-                        <task-name>Write the note</task-name>
-                        <task-numero>2.2.2.3</task-numero>
-                        <task-observation/>
-                        <task-executant>INT</task-executant>
-                        <task-modality>COGN</task-modality>
-                        <task-optional>false</task-optional>
-                        <task-interruptible>false</task-interruptible>
-                        <task-decomposition>LEAF</task-decomposition>
-                        <task-precondition>true</task-precondition>
-                        <task-effetsdebord>void</task-effetsdebord>
-                        <task-iteration>[1]</task-iteration>
-                        <point classkmad="tache.Point" idkmad="K96">
-                            <point-x>1572</point-x>
-                            <point-y>576</point-y>
-                        </point>
-                    </task>
                 </task>
             </task>
         </task>
     </task>
-    <abstractobject classkmad="metaobjet.ObjetAbstrait" idkmad="K44">
-        <abstractobject-name>reading</abstractobject-name>
-    </abstractobject>
-    <abstractobject classkmad="metaobjet.ObjetAbstrait" idkmad="K45">
-        <abstractobject-name>consumption</abstractobject-name>
-    </abstractobject>
 </kmad-model>
